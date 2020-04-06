@@ -33,7 +33,7 @@ function displayCards(){
     b.onclick = function(event){
       let cards = JSON.parse(localStorage.getItem('cards') || '[]')
       let ndx = -1
-      for(let i of cards){
+      for(let i in cards){
         if(cards[i].title === event.target.closest('.card').dataset.title){
           ndx = i 
           break
@@ -85,4 +85,4 @@ document.forms[0].querySelector('[type="button"]').onclick = function(){
 }
 document.forms[0].addEventListener('submit', addNewCard, false)
 
-displayCard()
+displayCards()
